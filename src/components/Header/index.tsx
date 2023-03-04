@@ -1,3 +1,4 @@
+import { useContext, useEffect, useState } from "react";
 import {
   AppBar,
   Box,
@@ -12,12 +13,11 @@ import { makeStyles } from "@mui/styles";
 
 import { NavLink } from "react-router-dom";
 
-import InfoPopper from "./components/InfoPopper";
 import LeftIndentIcon from "../../assets/icons/leftindent.svg";
 import RightIndentIcon from "../../assets/icons/rightindent.svg";
-import { useContext, useEffect, useState } from "react";
+
 import { useNavigate } from "react-router-dom";
-import { smartcontract } from "../../config";
+import useResponsive from "../../hooks/useResponsive";
 
 const useStyles = makeStyles({
   appBar: {
@@ -69,12 +69,8 @@ interface IMenuBoard {
 }
 
 
-
 function Header({ mobileOpen, handleDrawerToggle }: IHeader) { 
-  const theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up(1048));
-  const mobile = useMediaQuery(theme.breakpoints.down(705));
-
+  const isDesktop = useResponsive("up", "md");
   const classes = useStyles();
   let navigate = useNavigate();   
 
@@ -99,13 +95,13 @@ function Header({ mobileOpen, handleDrawerToggle }: IHeader) {
         >          
           <Box
             sx={{
-              display: desktop ? "flex" : "none",
+              display: isDesktop ? "flex" : "none",
               justifyContent: "space-between",
               width: "300px",
             }}
           >            
           </Box>
-          {desktop && (
+          {isDesktop && (
             <Typography
               className={classes.titleText}
               sx={{

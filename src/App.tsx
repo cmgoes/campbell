@@ -1,17 +1,25 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
-import { Information, ViewBase } from "./views";
+import { Home, PendingMotion, ViewBase } from "./views";
 
 function App() {
   return (
     <>
       <Routes>
         <Route
+          path="/pendingmotion"
+          element={
+            <ViewBase>
+              <PendingMotion />
+            </ViewBase>
+          }
+        />
+        <Route
           path="/"
           element={
             <ViewBase>
-              <Information />
+              <Home />
             </ViewBase>
           }
         />

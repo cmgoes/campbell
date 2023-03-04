@@ -22,10 +22,10 @@ import DrawerTelegramIcon from "../../../assets/icons/drawertelegram.png";
 
 const LinkButtonData = [
   {
-    link: "/voting",
+    link: "/pendingmotion",
     whiteIcon: DrawerVotingIcon,
     darkIcon: DrawerVotingBlackIcon,
-    text: "Voting",
+    text: "Pending Motion",
   },
   {
     link: "/missions",
