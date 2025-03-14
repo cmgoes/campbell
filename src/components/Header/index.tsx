@@ -3,20 +3,18 @@ import {
   AppBar,
   Box,
   Toolbar,
-  IconButton,
-  Link,
-  useMediaQuery,
-  useTheme,
+  IconButton,  
   Typography,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import LeftIndentIcon from "../../assets/icons/leftindent.svg";
 import RightIndentIcon from "../../assets/icons/rightindent.svg";
 
-import { useNavigate } from "react-router-dom";
+
 import useResponsive from "../../hooks/useResponsive";
 
 const useStyles = makeStyles({

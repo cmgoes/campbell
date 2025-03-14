@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
@@ -10,17 +11,13 @@ function App() {
         <Route
           path="/pendingmotion"
           element={
-            <ViewBase>
-              <PendingMotion />
-            </ViewBase>
+            <ViewBase children={<PendingMotion />} />
           }
         />
         <Route
           path="/"
           element={
-            <ViewBase>
-              <Home />
-            </ViewBase>
+            <ViewBase children={<Home />} />
           }
         />
       </Routes>
